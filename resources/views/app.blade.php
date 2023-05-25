@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{{ asset('dash/assets/logo_pink.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('dash/assets/qrtas.png') }}">
 
     <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="{{ asset('dash/css/simplebar.css') }}">

@@ -12,7 +12,7 @@ table th {
 }
 
 ul li a:hover {
-    color: #a1484d !important;
+    color: #91b307 !important;
 }
 
 td a {
@@ -21,7 +21,7 @@ td a {
 }
 
 td a:hover {
-    color: #a1484d !important;
+    color: #91b307 !important;
     text-decoration: none;
 }
 
@@ -81,7 +81,7 @@ td a:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #a1484d;
+    background: #91b307;
     transition: all 2s ease-in-out !important;
 }
 
@@ -105,18 +105,18 @@ td a:hover {
 }
 
 nav ul .haha a {
-    background-color: #a1484d !important;
+    background-color: #91b307 !important;
     color: #fff !important;
 }
 
 .pagination a:hover {
-    background-color: #a1484d !important;
+    background-color: #91b307 !important;
     color: #fff !important;
 }
 
 nav ul li a:hover {
     background-color: #a1484c10 !important;
-    color: #a1484d !important;
+    color: #91b307 !important;
 }
 
 nav ul li a {
@@ -124,21 +124,21 @@ nav ul li a {
 }
 
 .btn-hassan {
-    background-color: #a1484ce1 !important;
+    background-color: #91b307c5 !important;
     color: #fff !important;
 }
 
 .btn-hassan:hover {
-    background-color: #a1484c !important;
+    background-color: #91b307 !important;
     color: #fff !important;
 }
 
 .text-hassan {
-    color: #a1484d !important;
+    color: #91b307 !important;
 }
 
 .bg-hassan {
-    background-color: #a1484d !important;
+    background-color: #91b307 !important;
 }
 
 .bg-hassan strong,
@@ -152,7 +152,7 @@ nav ul li a {
 }
 
 .top_cards .card:hover {
-    background-color: #a1484d !important;
+    background-color: #91b307 !important;
 }
 
 .top_cards .card:hover p, .top_cards .card:hover span {

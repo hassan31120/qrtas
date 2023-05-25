@@ -64,77 +64,77 @@ class OrdersController extends Controller
 
                 Notification::send($order->users, new OrderNotification($order));
 
-                $specificEmailAddress = 'info@lacabina-sa.com';
-                Notification::route('mail', $specificEmailAddress)
-                    ->notify(new OrderNotification($order));
+                // $specificEmailAddress = 'info@lacabina-sa.com';
+                // Notification::route('mail', $specificEmailAddress)
+                //     ->notify(new OrderNotification($order));
 
-                $quantity = 0;
-                foreach ($order->orderDetails as $detail) {
-                    $quantity += $detail->quantity;
-                }
+                // $quantity = 0;
+                // foreach ($order->orderDetails as $detail) {
+                //     $quantity += $detail->quantity;
+                // }
 
-                $callResponse = Aramex::createShipment([
-                    'shipper' => [
-                        'name' => 'Lacabine - السعودية Riyadh شارع رقم 151 حي ظهرة لبن 13761 الرياض',
-                        'email' => 'info@lacabina-sa.com',
-                        'phone' => '966530704610',
-                        'cell_phone' => '966530704610',
-                        'number' => '966530704610',
-                        'country_code' => 'SA',
-                        'city' => 'Riyadh',
-                        'zip_code' => '',
-                        'line1' => 'Jobran Alrobayya, Lacabina',
-                        'line2' => 'ضاحية لبن شارع الطائف',
-                        'line3' => '966530704610',
-                    ],
+                // $callResponse = Aramex::createShipment([
+                //     'shipper' => [
+                //         'name' => 'Lacabine - السعودية Riyadh شارع رقم 151 حي ظهرة لبن 13761 الرياض',
+                //         'email' => 'info@lacabina-sa.com',
+                //         'phone' => '966530704610',
+                //         'cell_phone' => '966530704610',
+                //         'number' => '966530704610',
+                //         'country_code' => 'SA',
+                //         'city' => 'Riyadh',
+                //         'zip_code' => '',
+                //         'line1' => 'Jobran Alrobayya, Lacabina',
+                //         'line2' => 'ضاحية لبن شارع الطائف',
+                //         'line3' => '966530704610',
+                //     ],
 
-                    'consignee' => [
-                        'name' => Auth::user()->name,
-                        'email' => Auth::user()->email,
-                        'phone' => Auth::user()->number,
-                        'cell_phone' => Auth::user()->number,
-                        'country_code' => 'SA',
-                        'city' => $order->address->cities->name_en,
-                        'zip_code' => '',
-                        'line1' => '_____' . $order->address->governorate,
-                        'line2' => '     ' . $order->address->title,
-                        'line3' => '     ' . $order->address->description,
-                    ],
+                //     'consignee' => [
+                //         'name' => Auth::user()->name,
+                //         'email' => Auth::user()->email,
+                //         'phone' => Auth::user()->number,
+                //         'cell_phone' => Auth::user()->number,
+                //         'country_code' => 'SA',
+                //         'city' => $order->address->cities->name_en,
+                //         'zip_code' => '',
+                //         'line1' => '_____' . $order->address->governorate,
+                //         'line2' => '     ' . $order->address->title,
+                //         'line3' => '     ' . $order->address->description,
+                //     ],
 
-                    'shipping_date_time' => time(),
-                    'due_date' => time(),
-                    'comments' => 'No Comment',
-                    'pickup_location' => 'at reception',
-                    'pickup_guid' => '',
-                    'weight' => 1,
-                    'number_of_pieces' => $quantity,
-                    'description' => $order->pay_status,
-                    'product_group' => 'DOM',
-                    'product_type' => 'CDS',
-                    'payment_type' => 'P',
-                    'payment_option' => null,
-                ]);
-                if (!empty($callResponse->error)) {
-                    foreach ($callResponse->errors as $errorObject) {
-                        // handleError($errorObject->Code, $errorObject->Message);
-                        print_r($errorObject->Message);
-                        echo '<pre>';
-                    }
-                } else {
-                    // extract your data here, for example
-                    $shipmentId = $callResponse->Shipments->ProcessedShipment->ID;
-                    $labelUrl = $callResponse->Shipments->ProcessedShipment->ShipmentLabel->LabelURL;
-                    $order->shipment_link = $labelUrl;
-                    $order->shipment_id = $shipmentId;
-                    $order->save();
-                    return response()->json([
-                        'success' => true,
-                        'message' => 'your order is placed successfully',
-                        'shippment' => $labelUrl,
-                        'track' => $shipmentId,
-                        'order' => new OrdersResource($order),
-                    ], 200);
-                }
+                //     'shipping_date_time' => time(),
+                //     'due_date' => time(),
+                //     'comments' => 'No Comment',
+                //     'pickup_location' => 'at reception',
+                //     'pickup_guid' => '',
+                //     'weight' => 1,
+                //     'number_of_pieces' => $quantity,
+                //     'description' => $order->pay_status,
+                //     'product_group' => 'DOM',
+                //     'product_type' => 'CDS',
+                //     'payment_type' => 'P',
+                //     'payment_option' => null,
+                // ]);
+                // if (!empty($callResponse->error)) {
+                //     foreach ($callResponse->errors as $errorObject) {
+                //         // handleError($errorObject->Code, $errorObject->Message);
+                //         print_r($errorObject->Message);
+                //         echo '<pre>';
+                //     }
+                // } else {
+                //     // extract your data here, for example
+                //     $shipmentId = $callResponse->Shipments->ProcessedShipment->ID;
+                //     $labelUrl = $callResponse->Shipments->ProcessedShipment->ShipmentLabel->LabelURL;
+                //     $order->shipment_link = $labelUrl;
+                //     $order->shipment_id = $shipmentId;
+                //     $order->save();
+                //     return response()->json([
+                //         'success' => true,
+                //         'message' => 'your order is placed successfully',
+                //         'shippment' => $labelUrl,
+                //         'track' => $shipmentId,
+                //         'order' => new OrdersResource($order),
+                //     ], 200);
+                // }
 
                 return response()->json([
                     'success' => true,

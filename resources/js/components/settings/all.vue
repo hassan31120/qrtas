@@ -60,8 +60,8 @@ nav a {
   text-decoration: none;
 }
 .router-link-exact-active {
-  color: #a1484d;
-  border-bottom: 2px solid #a1484d;
+  color: #91b307;
+  border-bottom: 2px solid #91b307;
 }
 
 hr {

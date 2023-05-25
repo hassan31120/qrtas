@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <h2 class="h5 page-title pb-5">كل منتجات {{ sub.name }}</h2>
       <table class="table mt-5 table-hover">
-        <thead style="background-color: #a1484d">
+        <thead style="background-color: #91b307">
           <tr>
             <th scope="col">#</th>
             <th scope="col">الإسم</th>

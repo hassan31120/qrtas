@@ -5,7 +5,7 @@
         class="navbar-brand mx-auto mt-3 flex-fill text-center"
         :to="{ name: 'home' }"
       >
-        <img src="@/assets/logoFilled.png" alt="logo" width="100" />
+        <img src="@/assets/qrtas.png" alt="logo" width="80" />
       </router-link>
     </div>
     <button
@@ -258,7 +258,7 @@
         <button
           @click.prevent="logout"
           class="btn mb-2 btn-lg btn-block"
-          style="background-color: #a1484d; border-radius: 50px; color: #fff !important"
+          style="background-color: #91b307; border-radius: 50px; color: #fff !important"
         >
           <i class="fe fe-log-out fe-12 mr-2" style="font-weight: 700 !important"></i
           ><span class="small" style="font-weight: 700 !important">تسجيل الخروج</span>

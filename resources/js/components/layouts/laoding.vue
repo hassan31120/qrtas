@@ -41,7 +41,7 @@ export default {
 
 .loading {
   border: 2px solid transparent;
-  border-color: transparent #a1484d transparent #a1484d;
+  border-color: transparent #91b307 transparent #91b307;
   -moz-animation: rotate-loading 1.5s linear 0s infinite normal;
   -moz-transform-origin: 50% 50%;
   -o-animation: rotate-loading 1.5s linear 0s infinite normal;

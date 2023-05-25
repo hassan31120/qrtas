@@ -17,7 +17,7 @@
         <router-link
           class="navbar-brand mx-auto mt-4 mb-2 flex-fill text-center"
           :to="{ name: 'home' }"
-          ><img src="@/assets/logo_pinkk.png" alt="logo" width="140" />
+          ><img src="@/assets/qrtas.png" alt="logo" width="130" />
         </router-link>
       </div>
       <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -280,7 +280,7 @@
         <button
           @click.prevent="logout"
           class="btn mb-2 btn-lg btn-block"
-          style="background-color: #a1484d; border-radius: 50px; color: #fff !important"
+          style="background-color: #91b307; border-radius: 50px; color: #fff !important"
         >
           <i class="fe fe-log-out fe-12 mr-2" style="font-weight: 700 !important"></i
           ><span class="small" style="font-weight: 700 !important">تسجيل الخروج</span>
@@ -314,6 +314,6 @@ export default {
 <style scoped>
 ul a.router-link-exact-active {
   background-color: #a1484c10 !important;
-  color: #a1484d !important;
+  color: #91b307 !important;
 }
 </style>
