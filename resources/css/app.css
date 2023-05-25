@@ -1,0 +1,170 @@
+* {
+    font-family: "Cairo", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+table th {
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+ul li a:hover {
+    color: #a1484d !important;
+}
+
+td a {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+td a:hover {
+    color: #a1484d !important;
+    text-decoration: none;
+}
+
+.container-fluid table tbody .actions {
+    position: relative;
+    text-align: center;
+}
+
+.container-fluid table tbody .actions .fe-edit {
+    right: 5px;
+}
+
+.container-fluid table tbody .actions button {
+    border: none;
+    background-color: transparent;
+    color: #6c757d;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container-fluid table tbody .actions .fe-edit {
+        /* position: absolute; */
+        right: -1px;
+    }
+
+    .container-fluid table tbody .actions .fe-trash {
+        /* position: absolute; */
+        left: 5px;
+    }
+
+    ::-webkit-scrollbar {
+        height: 7px !important;
+    }
+
+    td img {
+        width: 75px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    td img {
+        border-radius: 5px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a1484d;
+    transition: all 2s ease-in-out !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+.delImage button {
+    border: none;
+    background-color: #fff;
+    padding: 0px;
+    position: absolute;
+    margin-right: -16px;
+    font-weight: 900 !important;
+    height: 15px;
+}
+
+.delImage img {
+    border-radius: 5px;
+}
+
+nav ul .haha a {
+    background-color: #a1484d !important;
+    color: #fff !important;
+}
+
+.pagination a:hover {
+    background-color: #a1484d !important;
+    color: #fff !important;
+}
+
+nav ul li a:hover {
+    background-color: #a1484c10 !important;
+    color: #a1484d !important;
+}
+
+nav ul li a {
+    border-radius: 5px;
+}
+
+.btn-hassan {
+    background-color: #a1484ce1 !important;
+    color: #fff !important;
+}
+
+.btn-hassan:hover {
+    background-color: #a1484c !important;
+    color: #fff !important;
+}
+
+.text-hassan {
+    color: #a1484d !important;
+}
+
+.bg-hassan {
+    background-color: #a1484d !important;
+}
+
+.bg-hassan strong,
+.bg-hassan a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.top_cards .card {
+    transition: all 0.4s ease-in-out;
+}
+
+.top_cards .card:hover {
+    background-color: #a1484d !important;
+}
+
+.top_cards .card:hover p, .top_cards .card:hover span {
+    color: #FFF !important;
+}
+
+.top_cards a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .disableOnMobile{
+        display: none !important;
+    }
+}
