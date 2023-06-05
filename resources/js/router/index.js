@@ -43,6 +43,13 @@ import couponsPage from "../pages/coupons/couponsPage.vue";
 import add_couponPage from "../pages/coupons/add_couponPage.vue";
 import edit_couponPage from "../pages/coupons/edit_couponPage.vue";
 
+import articlesPage from "../pages/articles/articlesPage.vue";
+import add_articlePage from "../pages/articles/add_articlePage.vue";
+import edit_articlePage from "../pages/articles/edit_articlePage.vue";
+
+import contactsPage from "../pages/contacts/contactsPage.vue";
+
+
 const routes = [
     {
         path: "/",
@@ -595,6 +602,66 @@ const routes = [
         path: "/edit_coupon/:id",
         name: "edit_coupon",
         component: edit_couponPage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch(() => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/articles",
+        name: "articles",
+        component: articlesPage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch((err) => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/add_article",
+        name: "add_article",
+        component: add_articlePage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch((err) => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/edit_article/:id",
+        name: "edit_article",
+        component: edit_articlePage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch(() => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/contacts",
+        name: "contacts",
+        component: contactsPage,
         beforeEnter: (to, from, next) => {
             axios
                 .get(`api/authenticated`)

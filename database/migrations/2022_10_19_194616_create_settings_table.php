@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->longText('about');
-            $table->longText('contact');
-            $table->longText('terms');
-            $table->longText('privacy');
+            $table->longText('about')->nullable();
+            $table->longText('contact')->nullable();
+            $table->longText('terms')->nullable();
+            $table->longText('privacy')->nullable();
+            $table->longText('email')->nullable();
+            $table->longText('mobile')->nullable();
+            $table->longText('whatsapp')->nullable();
+            $table->longText('about_en')->nullable();
+            $table->longText('terms_en')->nullable();
+            $table->longText('privacy_en')->nullable();
             $table->timestamps();
         });
     }

@@ -1,27 +1,29 @@
 <?php
 
-use App\Http\Controllers\Api\AddressesController;
-use App\Http\Controllers\Dash\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController as Auth;
-use App\Http\Controllers\Api\BannersController;
-use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CartController;
-use App\Http\Controllers\Api\CategoriesController;
 use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Dash\AuthController;
+use App\Http\Controllers\Dash\CityController;
+use App\Http\Controllers\Dash\NotiController;
 use App\Http\Controllers\Api\OrdersController;
+use App\Http\Controllers\Api\BannersController;
+use App\Http\Controllers\Dash\CouponController;
 use App\Http\Controllers\Api\ProductsController;
 use App\Http\Controllers\Api\SettingsController;
+use App\Http\Controllers\Dash\ArticleController;
+use App\Http\Controllers\Dash\ContactController;
+use App\Http\Controllers\Api\AddressesController;
+use App\Http\Controllers\Api\CategoriesController;
+use App\Http\Controllers\Api\AuthController as Auth;
 use App\Http\Controllers\Api\SubCategoriesController;
-use App\Http\Controllers\Dash\BannersController as DashBannersController;
-use App\Http\Controllers\Dash\CategoriesController as DashCategoriesController;
-use App\Http\Controllers\Dash\CityController;
-use App\Http\Controllers\Dash\CouponController;
-use App\Http\Controllers\Dash\NotiController;
 use App\Http\Controllers\Dash\OrdersController as DashOrdersController;
+use App\Http\Controllers\Dash\BannersController as DashBannersController;
 use App\Http\Controllers\Dash\ProductsController as DashProductsController;
 use App\Http\Controllers\Dash\SettingsController as DashSettingsController;
+use App\Http\Controllers\Dash\CategoriesController as DashCategoriesController;
 use App\Http\Controllers\Dash\SubCategoriesController as DashSubCategoriesController;
 
 /*
@@ -170,6 +172,17 @@ Route::group(['prefix' => 'dash', 'middleware' => 'isAdmin'], function () {
     Route::get('coupon/show/{id}', [CouponController::class, 'show']);
     Route::post('coupon/edit/{id}', [CouponController::class, 'update']);
     Route::post('coupon/del/{id}', [CouponController::class, 'destroy']);
+
+    // articles
+    Route::get('articles', [ArticleController::class, 'index']);
+    Route::get('article/show/{id}', [ArticleController::class, 'show']);
+    Route::post('article/add', [ArticleController::class, 'store']);
+    Route::post('article/edit/{id}', [ArticleController::class, 'update']);
+    Route::post('article/del/{id}', [ArticleController::class, 'destroy']);
+
+    // contacts
+    Route::get('contacts', [ContactController::class, 'index']);
+    Route::post('contact/del/{id}', [ContactController::class, 'destroy']);
 });
 
 Route::post('/dashLogin', [AuthController::class, 'dashLogin']);

@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('zamzams', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('amount');
-            $table->string('image');
-            $table->float('old_price');
-            $table->float('new_price');
+            $table->string('name');
+            $table->string('email');
+            $table->string('number');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zamzams');
+        Schema::dropIfExists('contacts');
     }
 };

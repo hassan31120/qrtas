@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('masajeds', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
-            $table->string('amount');
             $table->string('image');
-            $table->float('old_price');
-            $table->float('new_price');
+            $table->string('banner');
+            $table->longText('desc');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('masajeds');
+        Schema::dropIfExists('articles');
     }
 };
