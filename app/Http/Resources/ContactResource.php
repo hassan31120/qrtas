@@ -20,6 +20,7 @@ class ContactResource extends JsonResource
             'email' => $this->email,
             'number' => $this->number,
             'message' => $this->message,
+            'created_at' => $this->created_at->format('Y-m-d'),
         ];
     }
 }

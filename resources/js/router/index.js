@@ -49,6 +49,10 @@ import edit_articlePage from "../pages/articles/edit_articlePage.vue";
 
 import contactsPage from "../pages/contacts/contactsPage.vue";
 
+import linksPage from "../pages/links/linksPage.vue";
+import edit_linkPage from "../pages/links/edit_linkPage.vue";
+
+
 
 const routes = [
     {
@@ -662,6 +666,36 @@ const routes = [
         path: "/contacts",
         name: "contacts",
         component: contactsPage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch(() => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/links",
+        name: "links",
+        component: linksPage,
+        beforeEnter: (to, from, next) => {
+            axios
+                .get(`api/authenticated`)
+                .then(() => {
+                    next();
+                })
+                .catch(() => {
+                    return next({ name: "login" });
+                });
+        },
+    },
+    {
+        path: "/edit_link",
+        name: "edit_link",
+        component: edit_linkPage,
         beforeEnter: (to, from, next) => {
             axios
                 .get(`api/authenticated`)

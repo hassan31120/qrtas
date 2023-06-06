@@ -44,13 +44,13 @@
                                     }}</span>
                                 </div>
                                 <button type="submit" class="btn"
-                                    style="background-color: #ffd369;color: aliceblue;width: 100px;font-weight: 600;">
+                                    style="background-color: #91b307;color: aliceblue;width: 100px;font-weight: 600;">
                                     تأكيد
                                 </button>
                             </div>
                             <!-- /.col -->
                             <div class="disableOnMobile col-md-6 align-self-center">
-                                <img src="@/assets/illustrations/article.png" alt="..." />
+                                <img src="@/assets/animations/Product_iteration.gif" alt="..." />
                             </div>
                         </div>
                     </div>

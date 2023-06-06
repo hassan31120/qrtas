@@ -242,6 +242,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a href="#links" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                        <i class="fe fe-file-text fe-16"></i>
+                        <span class="ml-3 item-text">بيانات الموقع</span>
+                    </a>
+                    <ul class="collapse list-unstyled pl-4 w-100" id="links">
+                        <li class="nav-item">
+                            <router-link class="nav-link pl-3" :to="{ name: 'links' }">
+                                <span class="ml-1 item-text">كل البيانات</span>
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link pl-3" :to="{ name: 'edit_link' }">
+                                <span class="ml-1 item-text">تعديل البيانات</span>
+                            </router-link>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <div class="btn-box w-100 mt-4 mb-1">
                 <button @click.prevent="logout" class="btn mb-2 btn-lg btn-block"

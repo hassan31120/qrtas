@@ -24,6 +24,7 @@ use App\Http\Controllers\Dash\BannersController as DashBannersController;
 use App\Http\Controllers\Dash\ProductsController as DashProductsController;
 use App\Http\Controllers\Dash\SettingsController as DashSettingsController;
 use App\Http\Controllers\Dash\CategoriesController as DashCategoriesController;
+use App\Http\Controllers\Dash\LinkController;
 use App\Http\Controllers\Dash\SubCategoriesController as DashSubCategoriesController;
 
 /*
@@ -183,6 +184,10 @@ Route::group(['prefix' => 'dash', 'middleware' => 'isAdmin'], function () {
     // contacts
     Route::get('contacts', [ContactController::class, 'index']);
     Route::post('contact/del/{id}', [ContactController::class, 'destroy']);
+
+    //links
+    Route::get('link', [LinkController::class, 'index']);
+    Route::post('link/edit', [LinkController::class, 'edit']);
 });
 
 Route::post('/dashLogin', [AuthController::class, 'dashLogin']);
@@ -191,3 +196,8 @@ Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('discount', [CouponController::class, 'searchByCode']);
 
 Route::get('fetchAramexCities', [CityController::class, 'fetchAramexCities']);
+
+Route::get('link', [LinkController::class, 'index']);
+Route::post('contact', [LinkController::class, 'contact']);
+Route::get('/articles', [LinkController::class, 'articles']);
+Route::get('/article/{id}', [LinkController::class, 'article']);

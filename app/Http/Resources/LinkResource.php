@@ -27,7 +27,13 @@ class LinkResource extends JsonResource
             'app_store' => $this->app_store,
             'google_play' => $this->google_play,
             'address' => $this->address,
-            'logo' => asset($this->logo),
+            'logo' => $this->when(true, function () {
+                if (isset($this->logo)) {
+                    return asset($this->logo);
+                } else {
+                    return null;
+                }
+            },)
         ];
     }
 }

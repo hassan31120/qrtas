@@ -7,13 +7,14 @@
       <h2 class="h5 page-title pb-5">كل طلبات التواصل</h2>
 
       <table class="table mt-5 table-hover">
-        <thead style="background-color: #ffd369">
+        <thead style="background-color: #91b307">
           <tr>
             <th scope="col">#</th>
             <th scope="col">الإسم</th>
             <th scope="col">البريد الالكتروني</th>
             <th scope="col">الهاتف</th>
             <th scope="col">الرسالة</th>
+            <th scope="col">التاريخ</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
             <td>{{ contact.email }}</td>
             <td>{{ contact.number }}</td>
             <td>{{ contact.message }}</td>
+            <td>{{ contact.created_at }}</td>
             <td class="actions">
               <button type="button" @click="delCat(contact.id)">
                 <i class="fe fe-trash fe-16"></i>
